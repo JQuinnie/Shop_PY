@@ -54,14 +54,14 @@ def add_to_list(item):
 def show_list():
     clear_screen()
     print("Your Shopping list:")
-    print("-"*16)
+    print("-"*20)
     # start index at 1 to add number to list items
     index = 1
     for item in shopping_list:
         print("{}. {}".format(index, item))
         index += 1
 
-    print("-"*16)
+    print("-"*20)
 
 
 # define a function named remove_from_list that will remove an item from the list
