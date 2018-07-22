@@ -52,7 +52,8 @@ def add_to_list(item):
 # define a function named show_list that prints all the items in the list
 def show_list():
     clear_screen()
-    print("Here's your list:")
+    print("Your Shopping list:")
+    print("-"*16)
     # start index at 1 to add number to list items
     index = 1
     for item in shopping_list:
