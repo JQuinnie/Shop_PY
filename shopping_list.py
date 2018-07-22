@@ -48,17 +48,18 @@ show_help()
 while True:
     new_item = input("> ")
 
-    if new_item == "DONE":
+    if new_item.upper() == "DONE" or new_item.upper() == "QUIT":
         break
-    elif new_item == "HELP":
+    elif new_item.upper() == "HELP":
         show_help()
         # continue continues on the iteration
         continue
     # enable the SHOW command to show the list
-    elif new_item == "SHOW":
+    elif new_item.upper() == "SHOW":
         show_list()
         continue
     # call add_to_list with new_item as an argument
-    add_to_list(new_item)
+    else:
+        add_to_list(new_item)
 # show list on completion
 show_list()
