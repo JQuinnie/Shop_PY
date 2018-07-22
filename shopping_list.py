@@ -28,11 +28,25 @@ Enter 'HELP' for this help.
 # create a function named add_to_list that declares a parameter named item
 def add_to_list(item):
     show_list()
-    # add the item to the list
-    shopping_list.append(item)
-    # notify user that the item was added, and state the number of items in the list currently
-    print("Item added succesfully. There are currently {} items on the list.".format(
-        len(shopping_list)))
+    # if there is something on the list then ask where to add it
+    if len(shopping_list):
+        position = input("Where should I add {}?\n"
+                         "Press ENTER to add to the end of the list\n"
+                         "> ".format(item))
+    else:
+        position = 0
+    # try to turn position into integer, absolute value
+    try:
+        position = abs(int(position))
+    # ValueError thrown if position is not an integer, then make it position None and append to list
+    except ValueError:
+        position = None
+    if position is not None:
+        shopping_list.insert(position-1, item)
+    else:
+        shopping_list.append(item)
+
+    show_list()
 
 
 # define a function named show_list that prints all the items in the list
