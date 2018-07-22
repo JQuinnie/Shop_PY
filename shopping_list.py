@@ -1,18 +1,28 @@
+import os
+
+
 # create a new empty list named shopping_list
 shopping_list = []
 
 
+# create function to clear screen between operations
+# os library can run system level script, if user on windows? either run nt or clear depending on OS
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
 # create function for display HELP
 def show_help():
-    print('')
-    print('========================================')
+    clear_screen()
+    print("")
+    print("========================================")
     print("What do you need to pick up at the store?")
     print("""
 Enter 'SHOW' to show current list of items.
 Enter 'DONE' to stop adding items.
 Enter 'HELP' for this help.
 """)
-    print('========================================')
+    print("========================================")
 
 
 # create a function named add_to_list that declares a parameter named item
@@ -22,10 +32,12 @@ def add_to_list(item):
     # notify user that the item was added, and state the number of items in the list currently
     print("Item added succesfully. There are currently {} items on the list.".format(
         len(shopping_list)))
+    show_list()
 
 
 # define a function named show_list that prints all the items in the list
 def show_list():
+    clear_screen()
     print("Here's your list:")
     for item in shopping_list:
         print("- " + item)
@@ -36,14 +48,14 @@ show_help()
 while True:
     new_item = input("> ")
 
-    if new_item == 'DONE':
+    if new_item == "DONE":
         break
-    elif new_item == 'HELP':
+    elif new_item == "HELP":
         show_help()
         # continue continues on the iteration
         continue
     # enable the SHOW command to show the list
-    elif new_item == 'SHOW':
+    elif new_item == "SHOW":
         show_list()
         continue
     # call add_to_list with new_item as an argument
