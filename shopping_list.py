@@ -1,5 +1,5 @@
 import os
-
+import sys
 
 # create a new empty list named shopping_list
 shopping_list = []
@@ -82,6 +82,9 @@ while True:
     new_item = input("> ")
 
     if new_item.upper() == "DONE" or new_item.upper() == "QUIT":
+        # redirect stdout into a file and prints output
+        sys.stdout = open('my_shopping_list.txt', 'wt')
+        print()
         break
     elif new_item.upper() == "HELP":
         show_help()
