@@ -15,7 +15,7 @@ def clear_screen():
 def show_help():
     clear_screen()
     print("")
-    print("="*30)
+    print("="*50)
     print("What do you need to pick up at the store?")
     print("""
 Enter 'SHOW' to show current list of items.
@@ -23,7 +23,7 @@ Enter 'REMOVE' to delete an item from list.
 Enter 'DONE' to stop adding items.
 Enter 'HELP' for this help.
 """)
-    print("="*30)
+    print("="*50)
 
 
 # create a function named add_to_list that declares a parameter named item
@@ -31,7 +31,7 @@ def add_to_list(item):
     show_list()
     # if there is something on the list then ask where to add it
     if len(shopping_list):
-        position = input("Where should I add {}?\n"
+        position = input("What number should {} be on the list?\n"
                          "Press ENTER to add to the end of the list\n"
                          "> ".format(item))
     else:
