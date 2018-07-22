@@ -19,6 +19,7 @@ def show_help():
     print("What do you need to pick up at the store?")
     print("""
 Enter 'SHOW' to show current list of items.
+Enter 'REMOVE' to delete an item from list.
 Enter 'DONE' to stop adding items.
 Enter 'HELP' for this help.
 """)
@@ -63,6 +64,18 @@ def show_list():
     print("-"*16)
 
 
+# define a function named remove_from_list that will remove an item from the list
+def remove_from_list():
+    show_list()
+    what_to_remove = input("What would you like to remove?\n> ")
+    try:
+        shopping_list.remove(what_to_remove)
+    except ValueError:
+        pass
+        print("{} where not on the list".format(what_to_remove))
+    show_list()
+
+
 show_help()
 
 while True:
@@ -78,6 +91,9 @@ while True:
     elif new_item.upper() == "SHOW":
         show_list()
         continue
+    # enable the REMOVE command to remove an item from list
+    elif new_item.upper() == "REMOVE":
+        remove_from_list()
     # call add_to_list with new_item as an argument
     else:
         add_to_list(new_item)
