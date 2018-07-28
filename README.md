@@ -64,3 +64,11 @@ _HAPPY SHOPPING!_
 
 - Python for Beginners: https://www.python.org/about/gettingstarted/
 - Python Setup and Usage: https://docs.python.org/3/using/index.html
+
+## Future Improvements
+
+- Shop_PY PLUS
+  - Full Web App
+    - Language: Python
+    - Web Framework: Flask
+    - Database: SQLite
