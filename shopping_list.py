@@ -56,10 +56,8 @@ def show_list():
     print("Your Shopping list:")
     print("-"*20)
     # start index at 1 to add number to list items
-    index = 1
-    for item in shopping_list:
+    for index, item in enumerate(shopping_list, start=1):
         print("{}. {}".format(index, item))
-        index += 1
 
     print("-"*20)
 
